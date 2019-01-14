@@ -37,35 +37,35 @@ class PyCracker:
         self.start = ''
         self.stop = ''
 
-    def is_number(n):
+    def is_number(self, n):
         try:
             int(n)
             return True
         except ValueError:
-            if getDebug():
+            if self.getDebug():
                 print "Invalid number"
             return False
 
-    def setThreads(threadAmount):
-        if is_number(threadAmount):
+    def setThreads(self, threadAmount):
+        if self.is_number(threadAmount):
             self.threadAmount = threadAmount
             return True
         else:
-            if getDebug():
+            if self.getDebug():
                 print "Invalid amount"
             return False
 
-    def setConfig(configName):
+    def setConfig(self, configName):
         if include(configName):
             try:
                 checkacc()
                 return True
             except Exception:
-                if getDebug():
+                if self.getDebug():
                     print "The checkacc() function does not exist in your file."
                 return False
         else:
-            if getDebug():
+            if self.getDebug():
                 print "Something went wrong when including the config file."
             return False
 
@@ -123,10 +123,10 @@ class PyCracker:
         except Exception:
             return False
 
-    def setDebug(i):
+    def setDebug(self, i):
         self.debug = i
 
-    def getDebug():
+    def getDebug(self):
         if self.debug == 1:
             return True
         elif self.debug == 0:
