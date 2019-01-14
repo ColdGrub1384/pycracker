@@ -1,10 +1,10 @@
 import os
 def include(filename):
-    if os.path.exists(filename): 
+    if os.path.exists(filename):
         execfile(filename)
-		return True
-	else:
-		return False
+        return True
+    else:
+        return False
 include("PyCrackerBase.py")
 
 cracker = PyCracker()
